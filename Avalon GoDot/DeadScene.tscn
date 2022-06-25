@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://DeadScene.gd" type="Script" id=1]
+[ext_resource path="res://Game Assets/Background/background.png" type="Texture" id=2]
+[ext_resource path="res://ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1600, 800 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[node name="DeadScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 220.609
+margin_top = 286.316
+margin_right = 298.609
+margin_bottom = 300.316
+rect_scale = Vector2( 1.79802, 1.57411 )
+custom_fonts/font = SubResource( 2 )
+text = "You scored :"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 371.487
+margin_top = 283.509
+margin_right = 411.487
+margin_bottom = 297.509
+rect_scale = Vector2( 2.25312, 2.16258 )
+custom_fonts/font = SubResource( 3 )
+text = "SD"
+
+[node name="Label3" type="Label" parent="Panel"]
+margin_left = 198.928
+margin_top = 320.913
+margin_right = 359.928
+margin_bottom = 344.913
+rect_scale = Vector2( 1.56548, 1.5011 )
+custom_fonts/font = SubResource( 4 )
+text = "press any key to quit"
+
+[node name="Leaderboard" type="Label" parent="."]
+margin_left = 259.501
+margin_top = 22.3823
+margin_right = 328.501
+margin_bottom = 36.3823
+rect_scale = Vector2( 1.86516, 2.24729 )
+custom_fonts/font = SubResource( 5 )
+text = "Top Score"
+
+[node name="Label" type="Label" parent="Leaderboard"]
+margin_left = 17.4261
+margin_top = 17.4212
+margin_right = 57.4261
+margin_bottom = 31.4212
+custom_fonts/font = SubResource( 6 )

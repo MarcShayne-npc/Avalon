@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Main Menu Music.wav-7a7af13b06ae61238b2e49ca6a71ef61.sample"
+
+[deps]
+
+source_file="res://Game Assets/Sounds/SFX Avalon/Main Menu Music.wav"
+dest_files=[ "res://.import/Main Menu Music.wav-7a7af13b06ae61238b2e49ca6a71ef61.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

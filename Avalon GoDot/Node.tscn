@@ -1,0 +1,207 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Game Assets/Ai/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk2.png" type="Texture" id=3]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk3.png" type="Texture" id=4]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk4.png" type="Texture" id=5]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk5.png" type="Texture" id=6]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk6.png" type="Texture" id=7]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk7.png" type="Texture" id=8]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk8.png" type="Texture" id=9]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk9.png" type="Texture" id=10]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Walk/garbagebag_walk10.png" type="Texture" id=11]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack2.png" type="Texture" id=12]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack3.png" type="Texture" id=13]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack4.png" type="Texture" id=14]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack5.png" type="Texture" id=15]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack6.png" type="Texture" id=16]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack7.png" type="Texture" id=17]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack8.png" type="Texture" id=18]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack9.png" type="Texture" id=19]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack10.png" type="Texture" id=20]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Attack/garbagebag_attack11.png" type="Texture" id=21]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still1.png" type="Texture" id=22]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still2.png" type="Texture" id=23]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still3.png" type="Texture" id=24]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still4.png" type="Texture" id=25]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still5.png" type="Texture" id=26]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still6.png" type="Texture" id=27]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still7.png" type="Texture" id=28]
+[ext_resource path="res://Game Assets/Mobs/Garbage Bag/Idle/garbagebag_still8.png" type="Texture" id=29]
+[ext_resource path="res://Game Assets/Sounds/SFX Avalon/Bite SFX.wav" type="AudioStream" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 11.8617
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 44.776, 29.2481 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Damaged"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.45098, 0.0509804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "dying"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.243137, 0.0156863, 0.0156863, 1 ), Color( 0.713726, 0.101961, 0.101961, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.905882, 0.905882, 0.905882, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 22.0071, 35.9426 )
+
+[sub_resource type="CapsuleShape2D" id=9]
+height = 5.48665
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 83.1016, 61.5158 )
+collision_layer = 2
+collision_mask = 13
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.45098, 0.0509804, 1 )
+frames = SubResource( 1 )
+animation = "Attack"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.36985, 13.3146 )
+shape = SubResource( 2 )
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 9.61613, 9.98597 )
+enabled = true
+cast_to = Vector2( 0, 22.35 )
+collision_mask = 4
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( -2.2531, -40.7178 )
+scale = Vector2( 3.79399, 4.22108 )
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2( 0.527386, 12.9755 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damaged = SubResource( 4 )
+anims/dying = SubResource( 5 )
+anims/flash = SubResource( 6 )
+anims/reset = SubResource( 7 )
+
+[node name="AttackZone" type="Area2D" parent="."]
+scale = Vector2( 1.36, 0.92 )
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( -1.65845, -3.61977 )
+shape = SubResource( 8 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+editor/display_folded = true
+collision_layer = 32
+collision_mask = 72
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( -0.360229, 12.9686 )
+shape = SubResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -7.0
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_InvulnerabilityTimer_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]
+[connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
+[connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_HurtBox_area_exited"]

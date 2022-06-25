@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Laser Beam effect.wav-e88882946d6c5ae3fec9918624021bad.sample"
+
+[deps]
+
+source_file="res://Game Assets/Sounds/SFX Avalon/Laser Beam effect.wav"
+dest_files=[ "res://.import/Laser Beam effect.wav-e88882946d6c5ae3fec9918624021bad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

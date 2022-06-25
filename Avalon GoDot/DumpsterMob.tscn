@@ -1,0 +1,207 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://DumpsterMob.gd" type="Script" id=1]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk1.png" type="Texture" id=2]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk2.png" type="Texture" id=3]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk3.png" type="Texture" id=4]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk4.png" type="Texture" id=5]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk5.png" type="Texture" id=6]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk6.png" type="Texture" id=7]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk7.png" type="Texture" id=8]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk8.png" type="Texture" id=9]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Walk/Dumpster-Walk9.png" type="Texture" id=10]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack1.png" type="Texture" id=11]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack2.png" type="Texture" id=12]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack3.png" type="Texture" id=13]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack4.png" type="Texture" id=14]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack5.png" type="Texture" id=15]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack6.png" type="Texture" id=16]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack7.png" type="Texture" id=17]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack8.png" type="Texture" id=18]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack9.png" type="Texture" id=19]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack10.png" type="Texture" id=20]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Attack/Dumpster-Attack11.png" type="Texture" id=21]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still1.png" type="Texture" id=22]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still2.png" type="Texture" id=23]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still3.png" type="Texture" id=24]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still4.png" type="Texture" id=25]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still5.png" type="Texture" id=26]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still6.png" type="Texture" id=27]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still7.png" type="Texture" id=28]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still8.png" type="Texture" id=29]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still9.png" type="Texture" id=30]
+[ext_resource path="res://Game Assets/Mobs/DumpsterMonster/Still/Dumpster-Still10.png" type="Texture" id=31]
+[ext_resource path="res://Game Assets/Sounds/SFX Avalon/Whip Sound Effect.wav" type="AudioStream" id=32]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Attacking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 26.8779
+height = 8.5921
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 219.994, 69.6225 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 130.354, 34.4359 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 47.1116, 30.4763 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Damaged"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.45098, 0.0509804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "dying"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.219608, 0.0156863, 0.0156863, 1 ), Color( 0.686275, 0.0705882, 0.0705882, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="DumpsterMob" type="KinematicBody2D"]
+position = Vector2( 17.1115, 1.71114 )
+collision_layer = 2
+collision_mask = 13
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.53951, -2.97995 )
+shape = SubResource( 2 )
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 29.9596, -3.8147e-006 )
+enabled = true
+cast_to = Vector2( 0, 29.46 )
+collision_mask = 4
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+scale = Vector2( 1.2, 1 )
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2( 5.987, -40.661 )
+shape = SubResource( 3 )
+
+[node name="AttackZone" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( 3.35627, -5.71521 )
+shape = SubResource( 4 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 4.50792, -2.66378 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damaged = SubResource( 6 )
+anims/dying = SubResource( 7 )
+anims/flash = SubResource( 8 )
+anims/reset = SubResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
+volume_db = -5.0
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]
+[connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
+[connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_HurtBox_area_exited"]

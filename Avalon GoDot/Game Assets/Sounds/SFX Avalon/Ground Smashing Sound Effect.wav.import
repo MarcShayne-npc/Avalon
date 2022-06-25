@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ground Smashing Sound Effect.wav-19e3287efefb4a0ae1f6d25b66a6d41a.sample"
+
+[deps]
+
+source_file="res://Game Assets/Sounds/SFX Avalon/Ground Smashing Sound Effect.wav"
+dest_files=[ "res://.import/Ground Smashing Sound Effect.wav-19e3287efefb4a0ae1f6d25b66a6d41a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

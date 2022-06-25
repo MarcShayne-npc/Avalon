@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bite SFX.wav-f1de2203ab8c9db7561ac2bf181449af.sample"
+
+[deps]
+
+source_file="res://Game Assets/Sounds/SFX Avalon/Bite SFX.wav"
+dest_files=[ "res://.import/Bite SFX.wav-f1de2203ab8c9db7561ac2bf181449af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

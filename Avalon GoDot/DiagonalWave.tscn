@@ -1,0 +1,49 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave6.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave7.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave8.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave9.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave10.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave11.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave12.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Diagonal Wave/Diagonal_Wave13.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Light/radial-gradient.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -55.7672, 56.1577, 0.700439, -33.1638, 12.5073, -40.3506, 31.5009, -36.2439, 39.7144, -17.7635, 30.4743, -1.84993 )
+
+[node name="Diag1" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 6
+playing = true
+
+[node name="Diag2" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Diag3" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 14 )
+texture_scale = 0.4
+color = Color( 1, 0.423529, 0, 1 )
+shadow_enabled = true
